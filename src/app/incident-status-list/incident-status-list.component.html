@@ -1,0 +1,17 @@
+<h1 class="noIncidentsHeader" *ngIf="incidentList?.length < 1">No upcoming maintenance.</h1>
+<div *ngIf="incidentList?.length >= 1" class="list-wrapper">
+  <div class="incidentList-flex-container">
+    <div class="incidentList-container">
+      <div class="incidentList">
+        <div *ngFor="let incident of incidentList" class="incidentListItem-container">
+            <h1 class="incidentTitle">{{ incident.name }}</h1>
+            <li>
+              <div class="incidentListLine"></div>
+              <span>Date Here</span>
+              <p>{{ incident.comment }}</p>
+            </li>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

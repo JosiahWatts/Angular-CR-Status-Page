@@ -1,0 +1,38 @@
+<div class="listWrapper">
+  <div class="listFlexContainer">
+    <div class="appList-container">
+        <h1>Websites - {{ websiteOverallHealth?.tagline }}</h1>
+          <ul>
+            <div class="healthLine" 
+              [ngStyle]="{'background-color': getAppHealthColor(websiteOverallHealth?.health)}">
+            </div>
+            <li *ngFor="let webApp of websiteAppList last as isLast">
+                <div class="listItemFlexContainer">
+                  <div class="healthBubble" 
+                    [ngStyle]="{'background-color': getAppHealthColor(webApp.health)}">
+                  </div>
+                  <span>{{ webApp.name.toUpperCase() }}</span>
+                </div>
+                <div *ngIf="!isLast" class="separatorLine"></div>
+            </li>
+          </ul>
+    </div>
+    <div class="appList-container">
+        <h1>API - {{ apiOverallHealth?.tagline }}</h1>
+          <ul>
+            <div class="healthLine" 
+              [ngStyle]="{'background-color': getAppHealthColor(apiOverallHealth?.health)}">
+            </div>
+            <li *ngFor="let apiApp of apiAppList last as isLast">
+                <div class="listItemFlexContainer">
+                  <div class="healthBubble" 
+                    [ngStyle]="{'background-color': getAppHealthColor(apiApp.health)}">
+                  </div>
+                  <span>{{ apiApp.name.toUpperCase() }}</span>
+                </div>
+                <div *ngIf="!isLast" class="separatorLine"></div>
+            </li>
+          </ul>
+    </div>
+  </div>
+</div>
